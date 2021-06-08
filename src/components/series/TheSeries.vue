@@ -5,7 +5,7 @@
     </header>
     <p>{{ description }}</p>
     <a :href='link'></a>
-    <button>Delete</button>
+    <base-button mode='warning'>Delete</base-button>
   </base-card>
 </template>
 
@@ -30,22 +30,5 @@ export default {
 </script>
 
 <style scoped>
-button {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.25rem;
-  line-height: 50px;
-  height: 50px;
-  border: none;
-  background: #dc4663;
-  transition: 0.3s background ease;
-  color: white;
-  margin-top: auto;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: crimson;
-}
-
 
 </style>
