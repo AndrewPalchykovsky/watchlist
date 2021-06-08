@@ -17,7 +17,7 @@ export default {
   components: {
     TheSeries
   },
-  props: ['source']
+  inject: ['source']
 };
 </script>
 
