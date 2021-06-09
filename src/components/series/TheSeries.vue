@@ -4,7 +4,9 @@
       <h1>{{ title }}</h1>
     </header>
     <p>{{ description }}</p>
-    <a :href='link'></a>
+    <base-link :href='link' mode='link'>
+      Link
+    </base-link>
     <base-button mode='warning'>Delete</base-button>
   </base-card>
 </template>

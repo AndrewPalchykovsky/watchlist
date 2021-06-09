@@ -1,5 +1,5 @@
 <template>
-  <button :type='type' :class='mode'>
+  <button :class='mode'>
     <slot></slot>
   </button>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'BaseButton',
-  props: ['type', 'mode']
+  props: ['mode']
 };
 </script>
 
@@ -20,7 +20,6 @@ button {
   border: none;
   transition: 0.3s background ease;
   color: white;
-  margin-top: auto;
   background: black;
 }
 
@@ -51,6 +50,10 @@ button:hover {
 
 .btn--nav:hover{
   opacity: 1;
+}
+
+.btn--big{
+  padding: 0 3rem;
 }
 
 </style>

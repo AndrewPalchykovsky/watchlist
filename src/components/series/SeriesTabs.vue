@@ -3,7 +3,9 @@
     <base-button :mode='storedSeriesMode' @click="setSelectedTab('stored-series')">Stored series</base-button>
     <base-button :mode='addSeriesMode' @click="setSelectedTab('add-series')">Add series</base-button>
   </div>
-  <component :is='selectedTab'></component>
+  <keep-alive>
+    <component :is='selectedTab'></component>
+  </keep-alive>
 </template>
 
 <script>
@@ -37,12 +39,23 @@ export default {
   },
   provide() {
     return {
-      source: this.allSeries
+      source: this.allSeries,
+      addSeries: this.addSeries
     }
   },
   methods: {
     setSelectedTab(tab) {
-      this.selectedTab = tab
+      this.selectedTab = tab;
+    },
+    addSeries(title, description, url) {
+      const newSeries = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: url
+      }
+      this.allSeries.unshift(newSeries);
+      this.selectedTab = 'stored-series';
     }
   },
   computed: {
