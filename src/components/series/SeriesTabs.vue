@@ -40,7 +40,8 @@ export default {
   provide() {
     return {
       source: this.allSeries,
-      addSeries: this.addSeries
+      addSeries: this.addSeries,
+      deleteSeries: this.removeSeries
     }
   },
   methods: {
@@ -56,6 +57,11 @@ export default {
       }
       this.allSeries.unshift(newSeries);
       this.selectedTab = 'stored-series';
+    },
+    removeSeries(seriesId) {
+      const seriesIndex = this.allSeries.findIndex(ser => ser.id === seriesId);
+      this.allSeries.splice(seriesIndex, 1)
+
     }
   },
   computed: {

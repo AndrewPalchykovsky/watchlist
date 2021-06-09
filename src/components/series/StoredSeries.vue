@@ -2,6 +2,7 @@
   <div class='content-wrapper'>
     <the-series v-for='series in source'
                 :key='series.id'
+                :id='series.id'
                 :title='series.title'
                 :description='series.description'
                 :img='series.img'
