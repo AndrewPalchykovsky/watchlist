@@ -35,4 +35,22 @@ button:hover {
   background-color: crimson;
 }
 
+.btn--default{
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  opacity: 0.62;
+}
+
+.btn--nav{
+  background-color: transparent;
+  color: black;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.btn--nav:hover{
+  opacity: 1;
+}
+
 </style>

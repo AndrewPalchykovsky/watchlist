@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <base-button @click="setSelectedTab('stored-series')">Stored series</base-button>
-    <base-button @click="setSelectedTab('add-series')">Add series</base-button>
+  <div class='tabs-wrapper'>
+    <base-button :mode='storedSeriesMode' @click="setSelectedTab('stored-series')">Stored series</base-button>
+    <base-button :mode='addSeriesMode' @click="setSelectedTab('add-series')">Add series</base-button>
   </div>
   <component :is='selectedTab'></component>
 </template>
@@ -44,10 +44,22 @@ export default {
     setSelectedTab(tab) {
       this.selectedTab = tab
     }
-  }
+  },
+  computed: {
+    storedSeriesMode() {
+      return this.selectedTab === 'stored-series' ? 'btn--default' : 'btn--nav'
+    },
+    addSeriesMode() {
+      return this.selectedTab === 'add-series' ? 'btn--default' : 'btn--nav'
+    }
+  },
 };
 </script>
 
 <style scoped>
+
+.tabs-wrapper{
+  text-align: center;
+}
 
 </style>
